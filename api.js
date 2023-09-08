@@ -11,7 +11,8 @@ app.post("/bfhl", (req, res) => {
   console.log(data)
 
     //alphabets
-    const alphabets = data.filter(item => typeof item === 'string' && item.length === 1);
+    // const alphabets = data.filter(item => typeof item === 'string' && item.length === 1);
+    const alphabets = data.filter(item => typeof item === 'string' && /^[A-Za-z]$/.test(item));
 
     //numbers
     const numbers = data.filter(item => !isNaN(item));
