@@ -10,13 +10,15 @@ app.post("/bfhl", (req, res) => {
   const data = req.body.data;
   console.log(data)
 
-  
+    //alphabets
     const alphabets = data.filter(item => typeof item === 'string' && item.length === 1);
 
+    //numbers
     const numbers = data.filter(item => !isNaN(item));
 
     console.log(data);
 
+    //highest alphabets
     const highest_alphabet = alphabets.length > 0
     ? alphabets.reduce((a, b) => (a > b ? a : b)) : null;
 
